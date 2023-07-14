@@ -24,7 +24,7 @@ public class AmazonBasePage {
 
 
     @FindBy(id = "nav-cart")
-    public WebElement cartButton ;
+    public WebElement cartButton;
 
     @FindBy(id = "nav-link-accountList")
     public WebElement kontoAndListsButton;
@@ -56,11 +56,15 @@ public class AmazonBasePage {
     @FindBy(xpath = "//option[.='Computers']")
     public WebElement computersOption;
 
-    @FindBy(xpath = "//span[.='1-24 of 522 results for']")
+    @FindBy(xpath = "//span[contains (.,' results for')]")
     public WebElement resultMessage;
 
     @FindBy(xpath = "//a[.='2']")
     public WebElement secondPageOfResults;
+
+    @FindBy(xpath = "//span[.='2']")
+    public WebElement secondPageOfResults2;
+
 
     public void searchFor(String keyword) {
         textSearch.sendKeys(keyword + Keys.ENTER);
@@ -70,9 +74,8 @@ public class AmazonBasePage {
         cartButton.click();
     }
 
-    public void signInClick(){
-
-        Actions actions=new Actions(Driver.getDriver());
+    public void signInClick() {
+        Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(kontoAndListsButton).perform();
         newAccount.click();
         signIn.click();
@@ -80,33 +83,24 @@ public class AmazonBasePage {
         continueButton.click();
         passwordArea.sendKeys("Erfet2344.");
         signIn2.click();
-
     }
 
-    public void selectProduct(String productVisibleText){
-
+    public void selectProduct(String productVisibleText) {
         allButton.click();
-
-        Select select=new Select(allButton);
+        Select select = new Select(allButton);
         select.selectByVisibleText(productVisibleText);
-
     }
 
 
-    public void scrollandGoToSecondPageofResults(){
-
+    public void scrollandGoToSecondPageofResults() {
         JavascriptExecutor jsexecutor = (JavascriptExecutor) Driver.getDriver();
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", secondPageOfResults);
         secondPageOfResults.click();
-
     }
 
-    public void secondPageIsSelected(){
-
-        JavascriptExecutor jsexecutor = (JavascriptExecutor) Driver.getDriver();
-        jsexecutor.executeScript("arguments[0].scrollIntoView(true);", secondPageOfResults);
-        Assert.assertTrue(secondPageOfResults.isSelected());
-
+    public void secondPageIsSelected(String pageNo) {
+        String secondPageText = secondPageOfResults2.getText();
+        Assert.assertEquals(secondPageText, pageNo);
     }
 
 }

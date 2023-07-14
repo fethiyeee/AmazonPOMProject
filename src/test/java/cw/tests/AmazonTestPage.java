@@ -33,16 +33,14 @@ o Check that the exit process is done.
      */
 
 
-
-
     @Test
-    public void test(){
+    public void test() {
 
 //         The https://www.amazon.com.tr/ site is opened.
         Driver.getDriver().get(ConfigurationReader.getProperty("amazonUrl"));
 
 //         Check that the main page is opened.
-        AmazonHomePage homePage=new AmazonHomePage();
+        AmazonHomePage homePage = new AmazonHomePage();
         homePage.homePageIsOpened();//passed
 
 //         Accept cookies is selected from the cookie preferences.
@@ -57,7 +55,7 @@ o Check that the exit process is done.
 
 //         Computer is selected from the categories tab next to the search button.
 
-        AmazonSearchPage searchPage=new AmazonSearchPage();
+        AmazonSearchPage searchPage = new AmazonSearchPage();
 
         searchPage.selectProduct("Computers");
 
@@ -79,7 +77,7 @@ o Check that the exit process is done.
 
 //         Check that the 2nd page is opened.
 
-        searchPage.secondPageIsSelected();
+        searchPage.secondPageIsSelected("2");
 
 
 //         2nd product on the page is added to favourites.
