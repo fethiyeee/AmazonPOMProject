@@ -80,6 +80,8 @@ o Check that the exit process is done.
         searchPage.selectedPageNo("2");
 
 //         2nd product on the page is added to favourites.
+
+
 //         2. Check that the product has been added to favorites.
 //         Go to My Account > My Favorite List page.
 //         Check that the “My Favorite List” page is opened.
