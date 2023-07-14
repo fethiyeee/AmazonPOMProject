@@ -1,11 +1,14 @@
 package cw.pages.amazon;
 
 import cw.utilities.Driver;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 public class AmazonBasePage {
 
@@ -47,6 +50,18 @@ public class AmazonBasePage {
     @FindBy(xpath = "//span[contains (.,'Hello')]")
     public WebElement hello;
 
+    @FindBy(xpath = "//select[@name='url']")
+    WebElement allButton;
+
+    @FindBy(xpath = "//option[.='Computers']")
+    public WebElement computersOption;
+
+    @FindBy(xpath = "//span[.='1-24 of 522 results for']")
+    public WebElement resultMessage;
+
+    @FindBy(xpath = "//a[.='2']")
+    public WebElement secondPageOfResults;
+
     public void searchFor(String keyword) {
         textSearch.sendKeys(keyword + Keys.ENTER);
     }
@@ -65,6 +80,32 @@ public class AmazonBasePage {
         continueButton.click();
         passwordArea.sendKeys("Erfet2344.");
         signIn2.click();
+
+    }
+
+    public void selectProduct(String productVisibleText){
+
+        allButton.click();
+
+        Select select=new Select(allButton);
+        select.selectByVisibleText(productVisibleText);
+
+    }
+
+
+    public void scrollandGoToSecondPageofResults(){
+
+        JavascriptExecutor jsexecutor = (JavascriptExecutor) Driver.getDriver();
+        jsexecutor.executeScript("arguments[0].scrollIntoView(true);", secondPageOfResults);
+        secondPageOfResults.click();
+
+    }
+
+    public void secondPageIsSelected(){
+
+        JavascriptExecutor jsexecutor = (JavascriptExecutor) Driver.getDriver();
+        jsexecutor.executeScript("arguments[0].scrollIntoView(true);", secondPageOfResults);
+        Assert.assertTrue(secondPageOfResults.isSelected());
 
     }
 

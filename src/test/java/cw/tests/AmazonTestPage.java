@@ -1,6 +1,7 @@
 package cw.tests;
 
 import cw.pages.amazon.AmazonHomePage;
+import cw.pages.amazon.AmazonSearchPage;
 import cw.utilities.ConfigurationReader;
 import cw.utilities.Driver;
 import org.testng.Assert;
@@ -56,12 +57,31 @@ o Check that the exit process is done.
 
 //         Computer is selected from the categories tab next to the search button.
 
+        AmazonSearchPage searchPage=new AmazonSearchPage();
+
+        searchPage.selectProduct("Computers");
 
 //         Check that the Computer category is selected.
+
+        Assert.assertTrue(searchPage.computersOption.isSelected());
+
 //         Write msi in the search field and search.
+
+        searchPage.searchFor("msi");
+
 //         Check that the search has been made.
+
+        Assert.assertTrue(searchPage.resultMessage.isDisplayed());
+
 //         The second page opens from the search results page.
+
+        searchPage.scrollandGoToSecondPageofResults();
+
 //         Check that the 2nd page is opened.
+
+        searchPage.secondPageIsSelected();
+
+
 //         2nd product on the page is added to favourites.
 //         2. Check that the product has been added to favorites.
 //         Go to My Account > My Favorite List page.
