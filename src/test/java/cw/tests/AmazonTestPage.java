@@ -22,11 +22,10 @@ o Write msi in the search field and search.
 o Check that the search has been made.
 o The second page opens from the search results page.
 o Check that the 2nd page is opened.
-o 2nd product on the page is added to favourites.
-o 2. Check that the product has been added to favorites.
-o Go to My Account > My Favorite List page.
-o Check that the “My Favorite List” page is opened.
-o Added product is deleted from favorites.
+o 2nd product on the page is added to cart.
+o 2. Check that the product has been added to cart.
+o Check that the “Shopping Cart” page is opened.
+o Added product is deleted from cart.
 o It is checked that the deletion process has taken place.
 o Member exit process is done.
 o Check that the exit process is done.
@@ -79,13 +78,10 @@ o Check that the exit process is done.
 
         searchPage.selectedPageNo("2");
 
-//         2nd product on the page is added to favourites.
+//         2nd product on the page is added to cart.
 
 
-//         2. Check that the product has been added to favorites.
-//         Go to My Account > My Favorite List page.
-//         Check that the “My Favorite List” page is opened.
-//         Added product is deleted from favorites.
+//         Check that the “Shopping Cart” page is opened.o Added product is deleted from cart.
 //         It is checked that the deletion process has taken place.
 //         Member exit process is done.
 //         Check that the exit process is done.
