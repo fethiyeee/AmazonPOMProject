@@ -98,7 +98,7 @@ public class AmazonBasePage {
         secondPageOfResults.click();
     }
 
-    public void secondPageIsSelected(String pageNo) {
+    public void selectedPageNo(String pageNo) {
         String secondPageText = secondPageOfResults2.getText();
         Assert.assertEquals(secondPageText, pageNo);
     }

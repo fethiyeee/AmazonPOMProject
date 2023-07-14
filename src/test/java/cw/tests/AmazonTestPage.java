@@ -77,8 +77,7 @@ o Check that the exit process is done.
 
 //         Check that the 2nd page is opened.
 
-        searchPage.secondPageIsSelected("2");
-
+        searchPage.selectedPageNo("2");
 
 //         2nd product on the page is added to favourites.
 //         2. Check that the product has been added to favorites.
