@@ -24,10 +24,28 @@ public class AmazonBasePage {
     public WebElement cartButton ;
 
     @FindBy(id = "nav-link-accountList")
-    public WebElement signIn;
+    public WebElement kontoAndListsButton;
 
     @FindBy(xpath = "//a[@class='nav-a']")
     public WebElement newAccount;
+
+    @FindBy(xpath = "(//a[@class='a-link-emphasis'])[1]")
+    public WebElement signIn;
+
+    @FindBy(xpath = "//input[@id='ap_email']")
+    public WebElement eMailArea;
+
+    @FindBy(xpath = "//input[@id='continue']")
+    public WebElement continueButton;
+
+    @FindBy(xpath = "//input[@id='ap_password']")
+    public WebElement passwordArea;
+
+    @FindBy(id = "signInSubmit")
+    WebElement signIn2;
+
+    @FindBy(xpath = "//span[contains (.,'Hello')]")
+    public WebElement hello;
 
     public void searchFor(String keyword) {
         textSearch.sendKeys(keyword + Keys.ENTER);
@@ -40,8 +58,13 @@ public class AmazonBasePage {
     public void signInClick(){
 
         Actions actions=new Actions(Driver.getDriver());
-        actions.moveToElement(signIn).perform();
+        actions.moveToElement(kontoAndListsButton).perform();
         newAccount.click();
+        signIn.click();
+        eMailArea.sendKeys("fethiye0623@gmail.com");
+        continueButton.click();
+        passwordArea.sendKeys("Erfet2344.");
+        signIn2.click();
 
     }
 

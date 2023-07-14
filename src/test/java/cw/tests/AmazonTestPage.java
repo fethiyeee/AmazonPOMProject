@@ -3,6 +3,7 @@ package cw.tests;
 import cw.pages.amazon.AmazonHomePage;
 import cw.utilities.ConfigurationReader;
 import cw.utilities.Driver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AmazonTestPage {
@@ -50,7 +51,12 @@ o Check that the exit process is done.
         homePage.signInClick();
 
 //         Login process is checked.
+
+        Assert.assertTrue(homePage.hello.isDisplayed());
+
 //         Computer is selected from the categories tab next to the search button.
+
+
 //         Check that the Computer category is selected.
 //         Write msi in the search field and search.
 //         Check that the search has been made.
