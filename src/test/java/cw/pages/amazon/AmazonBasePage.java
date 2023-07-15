@@ -12,8 +12,7 @@ import org.testng.Assert;
 
 public class AmazonBasePage {
 
-    protected static int productCount=4;
-
+    protected static int productCount = 4;
     //I assigned a static int because the number of quantity and the number of products must be the same
 
     public AmazonBasePage() {
@@ -33,7 +32,7 @@ public class AmazonBasePage {
     public WebElement newAccount;
 
     @FindBy(xpath = "(//a[@class='a-link-emphasis'])[1]")
- //  @FindBy(xpath = "//span[@class='nav-action-inner']")
+    //  @FindBy(xpath = "//span[@class='nav-action-inner']")
     public WebElement signIn;
 
     @FindBy(xpath = "//input[@id='ap_email']")
