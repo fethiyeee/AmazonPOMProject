@@ -90,9 +90,9 @@ public class AmazonBasePage {
         newAccount.click();
         //The page does not allow direct login without clicking create new account.
         signIn.click();
-        eMailOrPhoneArea.sendKeys("fethiye0623@gmail.com");
+        eMailOrPhoneArea.sendKeys("01606315327");
         continueButton.click();
-        passwordArea.sendKeys("Erfet2306.");
+        passwordArea.sendKeys("123clarusway");
         signIn2.click();
     }
 
