@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="PomProject" />
+        <module name="AmazonPomProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="AmazonPOMProject" target="11" />
+      <module name="PomProject" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

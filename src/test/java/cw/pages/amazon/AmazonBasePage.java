@@ -22,7 +22,7 @@ public class AmazonBasePage {
     @FindBy(id = "twotabsearchtextbox")
     public WebElement textSearch;
 
-    @FindBy(id = "nav-cart")
+    @FindBy(xpath = "//form[@id='attach-view-cart-button-form']")
     public WebElement cartButton;
 
     @FindBy(id = "nav-link-accountList")
@@ -71,7 +71,16 @@ public class AmazonBasePage {
     public WebElement addedToCartMessage;
 
     @FindBy(xpath = "//h1")
-    public WebElement shoppingCartMeaasage;
+    public WebElement shoppingCartMessage;
+
+    @FindBy(xpath = "//input[@value='Delete']")
+    public WebElement deleteButton;
+
+    @FindBy(xpath = "//h1[@class='a-spacing-mini a-spacing-top-base']")
+    public WebElement cartIsEmptyMessage;
+
+    @FindBy(xpath = "//span[.='Sign Out']")
+    WebElement signOutButton;
 
 
     public void searchFor(String keyword) {
@@ -79,6 +88,7 @@ public class AmazonBasePage {
     }
 
     public void clickToCart() {
+       // Driver.getDriver().switchTo().frame("checkoutPrefetch");
         cartButton.click();
     }
 
@@ -93,22 +103,34 @@ public class AmazonBasePage {
         signIn2.click();
     }
 
-    public void selectProduct(String productVisibleText) {
+    public void selectProduct(String productVisibleText) throws InterruptedException {
         allButton.click();
         Select select = new Select(allButton);
         select.selectByVisibleText(productVisibleText);
+        Thread.sleep(1000);
+
     }
 
 
-    public void scrollandGoToSecondPageofResults() {
+    public void scrollandGoToSecondPageofResults() throws InterruptedException {
         JavascriptExecutor jsexecutor = (JavascriptExecutor) Driver.getDriver();
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", secondPageOfResults);
         secondPageOfResults.click();
+        Thread.sleep(1000);
     }
 
     public void selectedPageNo(String pageNo) {
         String secondPageText = secondPageOfResults2.getText();
         Assert.assertEquals(secondPageText, pageNo);
     }
+
+    public void signOut(){
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(kontoAndListsButton).perform();
+        signOutButton.click();
+        Assert.assertTrue(eMailArea.isDisplayed(),"user did not sign out");
+    }
+
+
 
 }

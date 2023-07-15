@@ -1,5 +1,7 @@
 package cw.tests;
 
+import cw.pages.amazon.AmazonBasePage;
+import cw.pages.amazon.AmazonCartPage;
 import cw.pages.amazon.AmazonHomePage;
 import cw.pages.amazon.AmazonSearchPage;
 import cw.utilities.ConfigurationReader;
@@ -33,7 +35,7 @@ o Check that the exit process is done.
 
 
     @Test
-    public void test() {
+    public void test() throws InterruptedException {
 
 //         The https://www.amazon.com.tr/ site is opened.
         Driver.getDriver().get(ConfigurationReader.getProperty("amazonUrl"));
@@ -50,7 +52,7 @@ o Check that the exit process is done.
 
 //         Login process is checked.
 
-        Assert.assertTrue(homePage.hello.isDisplayed());
+        Assert.assertTrue(homePage.hello.isDisplayed(),"user did not log in");
 
 //         Computer is selected from the categories tab next to the search button.
 
@@ -60,7 +62,7 @@ o Check that the exit process is done.
 
 //         Check that the Computer category is selected.
 
-        Assert.assertTrue(searchPage.computersOption.isSelected());
+        Assert.assertTrue(searchPage.computersOption.isSelected(),"product is not selected");
 
 //         Write msi in the search field and search.
 
@@ -68,7 +70,7 @@ o Check that the exit process is done.
 
 //         Check that the search has been made.
 
-        Assert.assertTrue(searchPage.resultMessage.isDisplayed());
+        Assert.assertTrue(searchPage.resultMessage.isDisplayed(),"results are not visible");
 
 //         The second page opens from the search results page.
 
@@ -82,24 +84,28 @@ o Check that the exit process is done.
 
         searchPage.clickProduct(1);
         searchPage.addToCart.click();
-//         Verify that
+
 //         Check that the “Shopping Cart” page is opened.
 
-        searchPage.clickToCart();
+        AmazonCartPage cartPage=new AmazonCartPage();
 
-
+        cartPage.clickToCart();
+        Assert.assertTrue(cartPage.shoppingCartMessage.isDisplayed(),"shopping cart page is not opened");//passed
 
 //         Added product is deleted from cart.
 
-
+        cartPage.deleteButton.click();
 
 //         It is checked that the deletion process has taken place.
-
+        Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(),"Your cart is not empty");//passed
 
 //         Member exit process is done.
 
+        cartPage.signOut();
 
 //         Check that the exit process is done.
+
+
 
 
     }
