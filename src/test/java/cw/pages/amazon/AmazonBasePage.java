@@ -22,7 +22,7 @@ public class AmazonBasePage {
     @FindBy(id = "twotabsearchtextbox")
     public WebElement textSearch;
 
-    @FindBy(xpath = "//form[@id='attach-view-cart-button-form']")
+    @FindBy(className = "nav-cart-icon nav-sprite")
     public WebElement cartButton;
 
     @FindBy(id = "nav-link-accountList")

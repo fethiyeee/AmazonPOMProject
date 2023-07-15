@@ -83,7 +83,7 @@ public class AmazonTestPage {
 
 //         2nd product on the page is added to cart.
 
-        searchPage.clickProduct(1);
+        searchPage.clickProduct(3);
         searchPage.addToCart.click();
 
 //         Check that the “Shopping Cart” page is opened.
@@ -96,9 +96,12 @@ public class AmazonTestPage {
 
 //        Number of items purchased in the basket{quantity} is increased
 
+        cartPage.selectQuantity(3);
+
+//       Cart amount must be found as product price*quantity is checked
+        cartPage.amoutPriceCheck(3);
 
 
-//         Cart amount must be found as product price*quantity
 
 
 
