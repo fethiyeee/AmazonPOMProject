@@ -80,10 +80,25 @@ o Check that the exit process is done.
 
 //         2nd product on the page is added to cart.
 
+        searchPage.clickProduct(1);
+        searchPage.addToCart.click();
+//         Verify that
+//         Check that the “Shopping Cart” page is opened.
 
-//         Check that the “Shopping Cart” page is opened.o Added product is deleted from cart.
+        searchPage.clickToCart();
+
+
+
+//         Added product is deleted from cart.
+
+
+
 //         It is checked that the deletion process has taken place.
+
+
 //         Member exit process is done.
+
+
 //         Check that the exit process is done.
 
 

@@ -15,11 +15,11 @@ public class AmazonSearchPage extends AmazonBasePage{
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//img[@class='s-image']")
+    @FindBy(xpath = "//div[@class='a-section aok-relative s-image-square-aspect']")
     List<WebElement>products;
 
 
-    public void navigateToCart(int index){
+    public void clickProduct(int index){
 
         products.get(index).click();
 

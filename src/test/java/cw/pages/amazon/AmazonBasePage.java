@@ -22,7 +22,6 @@ public class AmazonBasePage {
     @FindBy(id = "twotabsearchtextbox")
     public WebElement textSearch;
 
-
     @FindBy(id = "nav-cart")
     public WebElement cartButton;
 
@@ -64,6 +63,15 @@ public class AmazonBasePage {
 
     @FindBy(xpath = "//span[.='2']")
     public WebElement secondPageOfResults2;
+
+    @FindBy(xpath = "//input[@id='add-to-cart-button']")
+    public WebElement addToCart;
+
+    @FindBy(xpath = "(//h4[.='Added to Cart'])[2]")
+    public WebElement addedToCartMessage;
+
+    @FindBy(xpath = "//h1")
+    public WebElement shoppingCartMeaasage;
 
 
     public void searchFor(String keyword) {
