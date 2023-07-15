@@ -83,7 +83,6 @@ public class AmazonBasePage {
     WebElement signOutButton;
 
 
-
     public void signInClick() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(kontoAndListsButton).perform();
@@ -107,7 +106,6 @@ public class AmazonBasePage {
 
     }
 
-
     public void scrollandGoToSecondPageofResults() throws InterruptedException {
         JavascriptExecutor jsexecutor = (JavascriptExecutor) Driver.getDriver();
         jsexecutor.executeScript("arguments[0].scrollIntoView(true);", secondPageOfResults);
@@ -120,13 +118,11 @@ public class AmazonBasePage {
         Assert.assertEquals(secondPageText, pageNo);
     }
 
-    public void signOut(){
+    public void signOut() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(kontoAndListsButton).perform();
         signOutButton.click();
-        Assert.assertTrue(eMailArea.isDisplayed(),"user did not sign out");
     }
-
 
 
 }

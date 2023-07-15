@@ -104,6 +104,9 @@ o Check that the exit process is done.
         cartPage.signOut();
 
 //         Check that the exit process is done.
+        Assert.assertTrue(cartPage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
+
+
 
 
     }
