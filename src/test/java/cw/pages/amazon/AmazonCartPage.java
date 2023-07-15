@@ -12,7 +12,7 @@ public class AmazonCartPage extends AmazonBasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//select[@id='quantity']")
+    @FindBy(xpath = "//select[@name='quantity']")
     WebElement dropQuantity;
 
     public void selectQuantity(int index) {
@@ -21,8 +21,8 @@ public class AmazonCartPage extends AmazonBasePage {
         select.selectByIndex(index);
     }
 
-    @FindBy(id = "sc-subtotal-label-activecart")
-    public WebElement subtotalLabel;
+//    @FindBy(id = "sc-subtotal-label-activecart")
+//    public WebElement subtotalLabel;
 
     @FindBy(id = "sc-subtotal-amount-activecart")
     public WebElement subtotalAmount;

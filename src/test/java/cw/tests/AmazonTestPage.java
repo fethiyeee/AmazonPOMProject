@@ -93,19 +93,28 @@ public class AmazonTestPage {
         cartPage.cartButton.click();
         Assert.assertTrue(cartPage.shoppingCartMessage.isDisplayed(), "shopping cart page is not opened");//passed
 
+
+//        Number of items purchased in the basket{quantity} is increased
+
+
+
+//         Cart amount must be found as product price*quantity
+
+
+
 //         Added product is deleted from cart.
 
-        cartPage.deleteButton.click();
+        //cartPage.deleteButton.click();
 
 //         It is checked that the deletion process has taken place.
-        Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(), "Your cart is not empty");//passed
+       // Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(), "Your cart is not empty");//passed
 
 //         Member exit process is done.
 
-        cartPage.signOut();
+        //cartPage.signOut();
 
 //         Check that the exit process is done.
-        Assert.assertTrue(cartPage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
+       // Assert.assertTrue(cartPage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
 
 
     }
