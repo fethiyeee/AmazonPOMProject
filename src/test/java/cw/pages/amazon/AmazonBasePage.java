@@ -12,8 +12,7 @@ import org.testng.Assert;
 
 public class AmazonBasePage {
 
-    // navbar her sayfada ortak oldugundan tekrar tekrar her sayfada ayni webelementleri locate almamak icin
-    // burda bu islemleri yapip diger classlara extends edecegiz
+    public static int productCount=4;
 
     public AmazonBasePage() {
         PageFactory.initElements(Driver.getDriver(), this);

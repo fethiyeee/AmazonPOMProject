@@ -22,8 +22,8 @@ public class AmazonTestPage {
  8.Write msi in the search field and search.
  9.Check that the search has been made.
  10.The second page opens from the search results page.
- 11.Check that the 2nd page is opened.
- 12.2nd product on the page is added to cart.
+ 11.Check that the 3rd page is opened.
+ 12.3rd product on the page is added to cart.
  13.Check that the product has been added to cart.
  14.Check that the “Shopping Cart” page is opened.
  15.Number of items purchased in the basket{quantity} is increased
@@ -73,11 +73,11 @@ public class AmazonTestPage {
 
         Assert.assertTrue(searchPage.resultMessage.isDisplayed(), "results are not visible");
 
-//         The second page opens from the search results page.
+//         The third page opens from the search results page.
 
         searchPage.scrollandGoToSecondPageofResults();
 
-//         Check that the 2nd page is opened.
+//         Check that the 3rd page is opened.
 
         searchPage.selectedPageNo("2");
 
@@ -93,31 +93,26 @@ public class AmazonTestPage {
         cartPage.cartButton.click();
         Assert.assertTrue(cartPage.shoppingCartMessage.isDisplayed(), "shopping cart page is not opened");//passed
 
-
 //        Number of items purchased in the basket{quantity} is increased
 
-        cartPage.selectQuantity(3);
+        cartPage.selectQuantity();
 
 //       Cart amount must be found as product price*quantity is checked
-        cartPage.amoutPriceCheck(3);
-
-
-
-
+        cartPage.amoutPriceCheck();
 
 //         Added product is deleted from cart.
 
-        //cartPage.deleteButton.click();
+        cartPage.deleteButton.click();
 
 //         It is checked that the deletion process has taken place.
-       // Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(), "Your cart is not empty");//passed
+        Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(), "Your cart is not empty");//passed
 
 //         Member exit process is done.
 
-        //cartPage.signOut();
+        cartPage.signOut();
 
 //         Check that the exit process is done.
-       // Assert.assertTrue(cartPage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
+        Assert.assertTrue(cartPage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
 
 
     }

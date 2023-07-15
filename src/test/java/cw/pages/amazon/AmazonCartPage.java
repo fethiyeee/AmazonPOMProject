@@ -9,6 +9,8 @@ import org.testng.Assert;
 
 public class AmazonCartPage extends AmazonBasePage {
 
+
+
     public AmazonCartPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -16,10 +18,10 @@ public class AmazonCartPage extends AmazonBasePage {
     @FindBy(xpath = "//select[@name='quantity']")
     WebElement dropQuantity;
 
-    public void selectQuantity(int index) {
+    public void selectQuantity() {
 
         Select select = new Select(dropQuantity);
-        select.selectByIndex(index);
+        select.selectByIndex(productCount);
     }
 
     @FindBy(id = "sc-subtotal-label-activecart")
@@ -42,7 +44,7 @@ public class AmazonCartPage extends AmazonBasePage {
     }
 
 
-    public void amoutPriceCheck(int productCount){
+    public void amoutPriceCheck(){
 
         double expectedPrice= getProductPrice()*productCount;
         double actualPrice= getSubTotalAmount()*productCount;
