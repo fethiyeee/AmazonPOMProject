@@ -35,7 +35,7 @@ public class AmazonBasePage {
     public WebElement signIn;
 
     @FindBy(xpath = "//input[@id='ap_email']")
-    public WebElement eMailArea;
+    public WebElement eMailOrPhoneArea;
 
     @FindBy(xpath = "//input[@id='continue']")
     public WebElement continueButton;
@@ -83,24 +83,20 @@ public class AmazonBasePage {
     WebElement signOutButton;
 
 
-    public void searchFor(String keyword) {
-        textSearch.sendKeys(keyword + Keys.ENTER);
-    }
-
-    public void clickToCart() {
-       // Driver.getDriver().switchTo().frame("checkoutPrefetch");
-        cartButton.click();
-    }
 
     public void signInClick() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(kontoAndListsButton).perform();
         newAccount.click();
         signIn.click();
-        eMailArea.sendKeys("fethiye0623@gmail.com");
+        eMailOrPhoneArea.sendKeys("01606315327");
         continueButton.click();
-        passwordArea.sendKeys("Erfet2344.");
+        passwordArea.sendKeys("123clarusway");
         signIn2.click();
+    }
+
+    public void searchFor(String keyword) {
+        textSearch.sendKeys(keyword + Keys.ENTER);
     }
 
     public void selectProduct(String productVisibleText) throws InterruptedException {

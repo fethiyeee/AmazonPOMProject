@@ -52,7 +52,7 @@ o Check that the exit process is done.
 
 //         Login process is checked.
 
-        Assert.assertTrue(homePage.hello.isDisplayed(),"user did not log in");
+        Assert.assertTrue(homePage.hello.isDisplayed(), "user did not log in");
 
 //         Computer is selected from the categories tab next to the search button.
 
@@ -62,7 +62,7 @@ o Check that the exit process is done.
 
 //         Check that the Computer category is selected.
 
-        Assert.assertTrue(searchPage.computersOption.isSelected(),"product is not selected");
+        Assert.assertTrue(searchPage.computersOption.isSelected(), "product is not selected");
 
 //         Write msi in the search field and search.
 
@@ -70,7 +70,7 @@ o Check that the exit process is done.
 
 //         Check that the search has been made.
 
-        Assert.assertTrue(searchPage.resultMessage.isDisplayed(),"results are not visible");
+        Assert.assertTrue(searchPage.resultMessage.isDisplayed(), "results are not visible");
 
 //         The second page opens from the search results page.
 
@@ -87,25 +87,23 @@ o Check that the exit process is done.
 
 //         Check that the “Shopping Cart” page is opened.
 
-        AmazonCartPage cartPage=new AmazonCartPage();
+        AmazonCartPage cartPage = new AmazonCartPage();
 
-        cartPage.clickToCart();
-        Assert.assertTrue(cartPage.shoppingCartMessage.isDisplayed(),"shopping cart page is not opened");//passed
+        cartPage.cartButton.click();
+        Assert.assertTrue(cartPage.shoppingCartMessage.isDisplayed(), "shopping cart page is not opened");//passed
 
 //         Added product is deleted from cart.
 
         cartPage.deleteButton.click();
 
 //         It is checked that the deletion process has taken place.
-        Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(),"Your cart is not empty");//passed
+        Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(), "Your cart is not empty");//passed
 
 //         Member exit process is done.
 
         cartPage.signOut();
 
 //         Check that the exit process is done.
-
-
 
 
     }
