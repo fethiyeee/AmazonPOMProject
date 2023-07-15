@@ -1,6 +1,5 @@
 package cw.tests;
 
-import cw.pages.amazon.AmazonBasePage;
 import cw.pages.amazon.AmazonCartPage;
 import cw.pages.amazon.AmazonHomePage;
 import cw.pages.amazon.AmazonSearchPage;

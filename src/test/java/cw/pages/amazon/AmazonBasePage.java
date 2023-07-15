@@ -31,7 +31,8 @@ public class AmazonBasePage {
     @FindBy(xpath = "//a[@class='nav-a']")
     public WebElement newAccount;
 
-    @FindBy(xpath = "(//a[@class='a-link-emphasis'])[1]")
+  //  @FindBy(xpath = "(//a[@class='a-link-emphasis'])[1]")
+    @FindBy(xpath = "//span[@class='nav-action-inner']")
     public WebElement signIn;
 
     @FindBy(xpath = "//input[@id='ap_email']")
@@ -86,7 +87,7 @@ public class AmazonBasePage {
     public void signInClick() {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(kontoAndListsButton).perform();
-        newAccount.click();
+      //  newAccount.click();
         signIn.click();
         eMailOrPhoneArea.sendKeys("01606315327");
         continueButton.click();
