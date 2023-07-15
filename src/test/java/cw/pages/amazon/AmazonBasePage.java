@@ -12,7 +12,9 @@ import org.testng.Assert;
 
 public class AmazonBasePage {
 
-    public static int productCount=4;
+    protected static int productCount=4;
+
+    //I assigned a static int because the number of quantity and the number of products must be the same
 
     public AmazonBasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -89,9 +91,9 @@ public class AmazonBasePage {
         newAccount.click();
         //The page does not allow direct login without clicking create new account.
         signIn.click();
-        eMailOrPhoneArea.sendKeys("01606315327");
+        eMailOrPhoneArea.sendKeys("fethiye0623@gmail.com");
         continueButton.click();
-        passwordArea.sendKeys("123clarusway");
+        passwordArea.sendKeys("Erfet2306.");
         signIn2.click();
     }
 
