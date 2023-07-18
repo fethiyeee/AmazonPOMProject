@@ -3,28 +3,28 @@
 Hallo, ich habe diesen Testfall komplett selbst getestet. 😎
 Hier ist der Inhalt des Testfalls, falls Sie einen Blick darauf werfen möchten.. 😊
 
- /*
- 1.The https://www.amazon.com.tr/ site is opened.
- 2.Check that the main page is opened.
- 3.Accept cookies is selected from the cookie preferences.
- 4.Login to the site.
- 5.Login process is checked.
- 6.Computer is selected from the categories tab next to the search button.
- 7.Check that the Computer category is selected.
- 8.Write msi in the search field and search.
- 9.Check that the search has been made.
- 10.The second page opens from the search results page.
- 11.Check that the 3rd page is opened.
- 12.3rd product on the page is added to cart.
- 13.Check that the product has been added to cart.
- 14.Check that the “Shopping Cart” page is opened.
- 15.Number of items purchased in the basket{quantity} is increased
- 16.Cart amount must be found as product price*quantity
- 17.Added product is deleted from cart.
- 18.It is checked that the deletion process has taken place.
- 19.Member exit process is done.
- 20.Check that the exit process is done.
-    */
+ 
+    1. Die Seite https://www.amazon.com.tr/ wird geöffnet.
+    2. Überprüfen Sie, ob die Startseite geöffnet ist.
+    3. In den Cookie-Einstellungen ist „Cookies akzeptieren“ ausgewählt.
+    4. Melden Sie sich auf der Website an.
+    5. Der Registrierungsprozess wird überprüft.
+    6. Computer ist auf der Registerkarte „Kategorien“ neben der Suchschaltfläche ausgewählt.
+    7. Stellen Sie sicher, dass die Kategorie „Computer“ ausgewählt ist.
+    8. Geben Sie msi in das Suchfeld ein und suchen Sie.
+    9. Überprüfen Sie, ob der Suche getätigt wurde.
+    10. Die zweite Seite wird von der Suchergebnisseite aus geöffnet.
+    11. 3. Überprüfen Sie, ob die Seite geöffnet ist.
+    12. 3. Das Produkt auf der Seite wird dem Warenkorb hinzugefügt.
+    13. Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
+    14. Überprüfen Sie, ob die Warenkorbseite geöffnet ist.
+    15. Die Anzahl der im Warenkorb gekauften {amount} Artikel wurde erhöht
+    16. Der Betrag im Warenkorb muss als Produktpreis*Betrag angegeben werden.
+    17. Das hinzugefügte Produkt wird aus dem Warenkorb gelöscht.
+    18. Es wird geprüft, ob die Löschung erfolgt ist oder nicht.
+    19. Der Austrittsprozess für Mitglieder ist abgeschlossen.
+    20. Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
+    
  
 
  
