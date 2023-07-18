@@ -33,6 +33,18 @@ public class AmazonCartPage extends AmazonBasePage {
     @FindBy(xpath = "//div[@class='sc-badge-price-to-pay']")
     public WebElement productPrice;
 
+    @FindBy(xpath = "//input[@id='add-to-cart-button']")
+    public WebElement addToCart;
+
+    @FindBy(xpath = "(//h4[.='Added to Cart'])[2]")
+    public WebElement addedToCartMessage;
+
+    @FindBy(xpath = "//h1")
+    public WebElement shoppingCartMessage;
+
+    @FindBy(xpath = "//input[@value='Delete']")
+    public WebElement deleteButton;
+
 
     public double getProductPrice() {
 

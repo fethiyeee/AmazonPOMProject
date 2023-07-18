@@ -2,6 +2,7 @@ package cw.tests;
 
 import cw.pages.amazon.AmazonCartPage;
 import cw.pages.amazon.AmazonHomePage;
+import cw.pages.amazon.AmazonProductPage;
 import cw.pages.amazon.AmazonSearchPage;
 import cw.utilities.ConfigurationReader;
 import cw.utilities.Driver;
@@ -84,7 +85,9 @@ public class AmazonTestPage {
 //    Das dritte Produkt auf der Seite wird dem Warenkorb hinzugefügt.
 
         searchPage.clickProduct(2);
-        searchPage.addToCart.click();
+
+        AmazonProductPage productPage=new AmazonProductPage();
+        productPage.productAddToCart();
 
 //    Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
 
@@ -109,10 +112,10 @@ public class AmazonTestPage {
 
 //    Der Austrittsprozess für Mitglieder ist abgeschlossen.
 
-        cartPage.signOut();
+        homePage.signOut();
 
 //    Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
-        Assert.assertTrue(cartPage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
+        Assert.assertTrue(homePage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
 
 
     }
