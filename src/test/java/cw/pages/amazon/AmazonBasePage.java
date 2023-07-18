@@ -13,7 +13,7 @@ import org.testng.Assert;
 public class AmazonBasePage {
 
     protected static int productCount = 4;
-    //I assigned a static int because the number of quantity and the number of products must be the same
+    //Ich habe ein statisches int zugewiesen, da die Anzahl der Mengen und die Anzahl der Produkte gleich sein müssen
 
     public AmazonBasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
