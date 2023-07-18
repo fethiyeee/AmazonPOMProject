@@ -14,8 +14,8 @@ Hier ist der Inhalt des Testfalls, falls Sie einen Blick darauf werfen möchten.
     8. Geben Sie msi in das Suchfeld ein und suchen Sie.
     9. Überprüfen Sie, ob der Suche getätigt wurde.
     10. Die zweite Seite wird von der Suchergebnisseite aus geöffnet.
-    11. 3. Überprüfen Sie, ob die Seite geöffnet ist.
-    12. 3. Das Produkt auf der Seite wird dem Warenkorb hinzugefügt.
+    11.  Überprüfen Sie, ob die Seite geöffnet ist.
+    12. Das dritte Produkt auf der Seite wird dem Warenkorb hinzugefügt.
     13. Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
     14. Überprüfen Sie, ob die Warenkorbseite geöffnet ist.
     15. Die Anzahl der im Warenkorb gekauften {amount} Artikel wurde erhöht
