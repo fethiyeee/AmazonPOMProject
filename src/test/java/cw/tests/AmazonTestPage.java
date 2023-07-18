@@ -12,106 +12,106 @@ public class AmazonTestPage {
 
 
     /*
- 1.The https://www.amazon.com.tr/ site is opened.
- 2.Check that the main page is opened.
- 3.Accept cookies is selected from the cookie preferences.
- 4.Login to the site.
- 5.Login process is checked.
- 6.Computer is selected from the categories tab next to the search button.
- 7.Check that the Computer category is selected.
- 8.Write msi in the search field and search.
- 9.Check that the search has been made.
- 10.The second page opens from the search results page.
- 11.Check that the 3rd page is opened.
- 12.3rd product on the page is added to cart.
- 13.Check that the product has been added to cart.
- 14.Check that the “Shopping Cart” page is opened.
- 15.Number of items purchased in the basket{quantity} is increased
- 16.Cart amount must be found as product price*quantity
- 17.Added product is deleted from cart.
- 18.It is checked that the deletion process has taken place.
- 19.Member exit process is done.
- 20.Check that the exit process is done.
+    1. Die Seite https://www.amazon.com.tr/ wird geöffnet.
+    2. Überprüfen Sie, ob die Startseite geöffnet ist.
+    3. In den Cookie-Einstellungen ist „Cookies akzeptieren“ ausgewählt.
+    4. Melden Sie sich auf der Website an.
+    5. Der Registrierungsprozess wird überprüft.
+    6. Computer ist auf der Registerkarte „Kategorien“ neben der Suchschaltfläche ausgewählt.
+    7. Stellen Sie sicher, dass die Kategorie „Computer“ ausgewählt ist.
+    8. Geben Sie msi in das Suchfeld ein und suchen Sie.
+    9. Überprüfen Sie, ob der Suche getätigt wurde.
+    10. Die zweite Seite wird von der Suchergebnisseite aus geöffnet.
+    11. Überprüfen Sie, ob die Seite geöffnet ist.
+    12. Das dritte Produkt auf der Seite wird dem Warenkorb hinzugefügt.
+    13. Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
+    14. Überprüfen Sie, ob die Warenkorbseite geöffnet ist.
+    15. Die Anzahl der im Warenkorb gekauften {amount} Artikel wurde erhöht
+    16. Der Betrag im Warenkorb muss als Produktpreis*Betrag angegeben werden.
+    17. Das hinzugefügte Produkt wird aus dem Warenkorb gelöscht.
+    18. Es wird geprüft, ob die Löschung erfolgt ist oder nicht.
+    19. Der Austrittsprozess für Mitglieder ist abgeschlossen.
+    20. Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
     */
 
 
     @Test
     public void test() throws InterruptedException {
 
-//         The https://www.amazon.com.tr/ site is opened.
+//   Die Seite https://www.amazon.com.tr/ wird geöffnet.
         Driver.getDriver().get(ConfigurationReader.getProperty("amazonUrl"));
 
-//         Check that the main page is opened.
+//   Überprüfen Sie, ob die Startseite geöffnet ist.
         AmazonHomePage homePage = new AmazonHomePage();
         homePage.homePageIsOpened();//passed
 
-//         Accept cookies is selected from the cookie preferences.
+//   In den Cookie-Einstellungen ist „Cookies akzeptieren“ ausgewählt.
 
-//         Login to the site.
+//   Melden Sie sich auf der Website an.
 
         homePage.signInClick();
 
-//         Login process is checked.
+//   Der Registrierungsprozess wird überprüft.
 
         Assert.assertTrue(homePage.hello.isDisplayed(), "user did not log in");
 
-//         Computer is selected from the categories tab next to the search button.
+//   Computer ist auf der Registerkarte „Kategorien“ neben der Suchschaltfläche ausgewählt.
 
         AmazonSearchPage searchPage = new AmazonSearchPage();
 
         searchPage.selectProduct("Computers");
 
-//         Check that the Computer category is selected.
+//   Stellen Sie sicher, dass die Kategorie „Computer“ ausgewählt ist.
 
         Assert.assertTrue(searchPage.computersOption.isSelected(), "product is not selected");
 
-//         Write msi in the search field and search.
+//   Geben Sie msi in das Suchfeld ein und suchen Sie.
 
         searchPage.searchFor("msi");
 
-//         Check that the search has been made.
+//   Überprüfen Sie, ob der Suche getätigt wurde.
 
         Assert.assertTrue(searchPage.resultMessage.isDisplayed(), "results are not visible");
 
-//         The third page opens from the search results page.
+//   Die zweite Seite wird von der Suchergebnisseite aus geöffnet.
 
         searchPage.scrollandGoToSecondPageofResults();
 
-//         Check that the 3rd page is opened.
+//    Überprüfen Sie, ob die Seite geöffnet ist.
 
-        searchPage.selectedPageNo("2");
+        searchPage.selectedPageIsOpened("2");
 
-//         2nd product on the page is added to cart.
+//    Das dritte Produkt auf der Seite wird dem Warenkorb hinzugefügt.
 
-        searchPage.clickProduct(3);
+        searchPage.clickProduct(2);
         searchPage.addToCart.click();
 
-//         Check that the “Shopping Cart” page is opened.
+//    Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
 
         AmazonCartPage cartPage = new AmazonCartPage();
 
         cartPage.cartButton.click();
         Assert.assertTrue(cartPage.shoppingCartMessage.isDisplayed(), "shopping cart page is not opened");//passed
 
-//        Number of items purchased in the basket{quantity} is increased
+//    Die Anzahl der im Warenkorb gekauften {amount} Artikel wurde erhöht
 
         cartPage.selectQuantity();
 
-//       Cart amount must be found as product price*quantity is checked
+//    Der Betrag im Warenkorb muss als Produktpreis*Betrag angegeben werden.
         cartPage.amoutPriceCheck();
 
-//         Added product is deleted from cart.
+//    Das hinzugefügte Produkt wird aus dem Warenkorb gelöscht.
 
         cartPage.deleteButton.click();
 
-//         It is checked that the deletion process has taken place.
+//    Es wird geprüft, ob die Löschung erfolgt ist oder nicht.
         Assert.assertTrue(cartPage.cartIsEmptyMessage.isDisplayed(), "Your cart is not empty");//passed
 
-//         Member exit process is done.
+//    Der Austrittsprozess für Mitglieder ist abgeschlossen.
 
         cartPage.signOut();
 
-//         Check that the exit process is done.
+//    Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
         Assert.assertTrue(cartPage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
 
 

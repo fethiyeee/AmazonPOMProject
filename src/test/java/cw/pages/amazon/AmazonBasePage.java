@@ -115,7 +115,7 @@ public class AmazonBasePage {
         Thread.sleep(1000);
     }
 
-    public void selectedPageNo(String pageNo) {
+    public void selectedPageIsOpened(String pageNo) {
         String secondPageText = secondPageOfResults2.getText();
         Assert.assertEquals(secondPageText, pageNo);
     }
