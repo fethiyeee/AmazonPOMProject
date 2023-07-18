@@ -10,12 +10,12 @@ import org.testng.Assert;
 
 import java.util.List;
 
-public class AmazonSearchPage extends AmazonBasePage{
+public class AmazonSearchPage extends AmazonBasePage {
 
 
     public AmazonSearchPage() {
 
-        PageFactory.initElements(Driver.getDriver(),this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//select[@name='url']")
@@ -34,10 +34,10 @@ public class AmazonSearchPage extends AmazonBasePage{
     public WebElement secondPageOfResults2;
 
     @FindBy(xpath = "//div[@class='a-section aok-relative s-image-square-aspect']")
-    List<WebElement>products;
+    List<WebElement> products;
 
 
-    public void clickProduct(int index){
+    public void clickProduct(int index) {
 
         products.get(index).click();
 
@@ -62,7 +62,6 @@ public class AmazonSearchPage extends AmazonBasePage{
         String secondPageText = secondPageOfResults2.getText();
         Assert.assertEquals(secondPageText, pageNo);
     }
-
 
 
 }

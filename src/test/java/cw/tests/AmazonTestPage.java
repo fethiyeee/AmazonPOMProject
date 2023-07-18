@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 public class AmazonTestPage {
 
-
     /*
     1. Die Seite https://www.amazon.com.tr/ wird geöffnet.
     2. Überprüfen Sie, ob die Startseite geöffnet ist.
@@ -116,7 +115,6 @@ public class AmazonTestPage {
 
 //    Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
         Assert.assertTrue(homePage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
-
 
     }
 
