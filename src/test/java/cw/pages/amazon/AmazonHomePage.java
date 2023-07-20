@@ -14,7 +14,7 @@ public class AmazonHomePage extends AmazonBasePage {
     }
 
 
-    @FindBy(id = "nav-link-accountList")
+    @FindBy(xpath = "(//a[@id='nav-link-accountList'])[1]")
     public WebElement kontoAndListsButton;
 
     @FindBy(xpath = "//a[@class='nav-a']")
@@ -61,6 +61,7 @@ public class AmazonHomePage extends AmazonBasePage {
         continueButton.click();
         passwordArea.sendKeys("123clarusway");
         signIn2.click();
+
     }
 
     public void signOut() {

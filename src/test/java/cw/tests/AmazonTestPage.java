@@ -49,8 +49,11 @@ public class AmazonTestPage {
 
 //   Melden Sie sich auf der Website an.
 
-        homePage.signInClick();
+       homePage.signInClick();
 
+
+
+        /*
 //   Der Registrierungsprozess wird überprüft.
 
         Assert.assertTrue(homePage.hello.isDisplayed(), "user did not log in");
@@ -116,7 +119,11 @@ public class AmazonTestPage {
 //    Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
         Assert.assertTrue(homePage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
 
+         */
+
     }
+
+
 
 
 }

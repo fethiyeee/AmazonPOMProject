@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-public class AmazonCartPage extends AmazonBasePage {
+public class AmazonCartPage extends AmazonBasePage{
 
 
 
