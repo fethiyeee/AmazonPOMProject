@@ -1,6 +1,7 @@
 package cw.pages.amazon;
 
 import cw.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -10,6 +11,68 @@ import org.testng.Assert;
 public class AmazonCartPage extends AmazonBasePage{
 
 
+
+
+    public void mengeDropDown() {
+        WebElement mengeDropdown = Driver.getDriver().findElement(By.id("quantity"));
+        Select select = new Select(mengeDropdown);
+        select.selectByVisibleText("3");
+    }
+
+    public double price(){
+        WebElement productPrice = Driver.getDriver().findElement(By.xpath("//div[@class='sc-badge-price-to-pay']"));
+        String pp = productPrice.getText().replace("$", "").replace(" ", "").replace(",", ".");
+        return Double.parseDouble(pp);
+    }
+
+    public double priceSumme(){
+        WebElement productPriceSumme = Driver.getDriver().findElement(By.xpath("//*[@id='sc-subtotal-amount-activecart']/span"));
+        String ppS = productPriceSumme.getText().replace("$", "").replace(" ", "").replace(",", ".");
+        return Double.parseDouble(ppS);
+    }
+
+    public WebElement loschen(){
+        return Driver.getDriver().findElement(By.xpath("//input[@value='Löschen']"));
+    }
+
+    public String loschenVerify(){
+        return Driver.getDriver().findElement(By.xpath("//h1[@class='a-spacing-mini a-spacing-top-base']")).getText();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
 
     public AmazonCartPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -65,5 +128,7 @@ public class AmazonCartPage extends AmazonBasePage{
 
         Assert.assertEquals(actualPrice,expectedPrice);
     }
+
+     */
 
 }

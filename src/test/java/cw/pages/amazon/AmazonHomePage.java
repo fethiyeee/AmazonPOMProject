@@ -1,6 +1,7 @@
 package cw.pages.amazon;
 
 import cw.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,18 @@ import org.testng.Assert;
 
 public class AmazonHomePage extends AmazonBasePage {
 
+
+
+    public void cerezAccept(){
+        Driver.getDriver().findElement(By.id("a-autoid-0")).click();
+    }
+
+
+
+
+
+
+    /*
     public AmazonHomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -69,4 +82,6 @@ public class AmazonHomePage extends AmazonBasePage {
         actions.moveToElement(kontoAndListsButton).perform();
         signOutButton.click();
     }
+
+     */
 }

@@ -1,6 +1,7 @@
 package cw.pages.amazon;
 
 import cw.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,11 +9,69 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AmazonSearchPage extends AmazonBasePage {
 
 
+
+    public String searchText() {
+        WebElement searchText = Driver.getDriver().findElement(By.xpath("//span[@class='a-color-state a-text-bold']"));
+        return searchText.getText();
+    }
+
+    public void seiteZweiClick(){
+        WebElement seiteZwei = Driver.getDriver().findElement(By.xpath("//a[@aria-label='Zu Seite 2']"));
+        seiteZwei.click();
+    }
+
+    public WebElement seiteZweiVerify(){
+        WebElement seiteZweiVerify = Driver.getDriver().findElement(By.xpath("//span[@aria-label='Aktuelle Seite, Seite 2']"));
+        return seiteZweiVerify;
+    }
+
+    public WebElement products(){
+        List<WebElement> productsList = new ArrayList<>(Driver.getDriver().findElements(By.className("s-image")));
+        return productsList.get(1);
+    }
+
+    public void addtoCart() {
+        Driver.getDriver().findElement(By.xpath("(//input[@id='add-to-cart-button'])[1]")).click();
+    }
+
+    public String hinzufugen(){
+        return  Driver.getDriver().findElement(By.xpath("//*[@id=\"NATC_SMART_WAGON_CONF_MSG_SUCCESS\"]/span")).getText();
+    }
+
+    public void einkaufswagwen(){
+        Driver.getDriver().findElement(By.xpath("//*[@id='sw-gtc']/span/a")).click();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     public AmazonSearchPage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
@@ -62,6 +121,8 @@ public class AmazonSearchPage extends AmazonBasePage {
         String secondPageText = secondPageOfResults2.getText();
         Assert.assertEquals(secondPageText, pageNo);
     }
+
+     */
 
 
 }

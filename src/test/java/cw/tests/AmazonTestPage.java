@@ -1,9 +1,6 @@
 package cw.tests;
 
-import cw.pages.amazon.AmazonCartPage;
-import cw.pages.amazon.AmazonHomePage;
-import cw.pages.amazon.AmazonProductPage;
-import cw.pages.amazon.AmazonSearchPage;
+import cw.pages.amazon.*;
 import cw.utilities.ConfigurationReader;
 import cw.utilities.Driver;
 import org.testng.Assert;
@@ -35,6 +32,118 @@ public class AmazonTestPage {
     */
 
 
+
+    @Test
+    public void test() throws InterruptedException {
+
+        AmazonBasePage basePage = new AmazonBasePage();
+        AmazonCartPage cartPage = new AmazonCartPage();
+        AmazonLoginPage loginPage = new AmazonLoginPage();
+        AmazonHomePage homePage = new AmazonHomePage();
+        AmazonSearchPage searchPage = new AmazonSearchPage();
+
+        // Amazon-Website öffnen https://www.amazon.com.tr/
+        Driver.getDriver().get(ConfigurationReader.getProperty("amazonUrl"));
+
+        // Startseite wird geöffnet und überprüft
+        Assert.assertTrue(Driver.getDriver().getTitle().contains("Amazon"));
+
+        // Cookies akzeptieren
+        // homePage.cerezAccept();
+
+        // Login auf der Website
+        basePage.loginClick();
+        loginPage.loginEmail();
+        loginPage.loginPassword();
+
+        // Login-Seite wird geöffnet und überprüft
+        Assert.assertTrue(basePage.loginVerify().getText().contains("Hello"));
+
+        // Kategorien-Tab "Computer" auswählen
+        basePage.selectDropDown();
+
+        // Computer-Kategorie ausgewählt und überprüft
+        Assert.assertTrue(basePage.selectedCategoryVerify().contains("Computer"));
+
+        // In die Suchleiste "msi" eingeben und Suche ausführen
+        basePage.searchArea("msi");
+
+        // Die Suchergebnisseite wird geöffnet und überprüft
+        Assert.assertTrue(searchPage.searchText().contains("msi"));
+
+        // Auf die 2. Seite der Suchergebnisse navigieren
+        searchPage.seiteZweiClick();
+
+        // 2. Seite wird geöffnet und überprüft
+        Assert.assertTrue(searchPage.seiteZweiVerify().getText().contains("2"));
+
+        // Wählen Sie das zweite Produkt aus
+        searchPage.products().click();
+
+        // Das zweite Produkt auf der Seite wird dem Warenkorb hinzugefügt.
+        searchPage.addtoCart();
+        Thread.sleep(2000);
+
+        // Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
+        Assert.assertTrue(searchPage.hinzufugen().contains("hinzugefügt"));
+
+        // Überprüfen Sie, ob die Warenkorbseite geöffnet ist.
+        searchPage.einkaufswagwen();
+
+        // Die Anzahl der im Warenkorb gekauften {amount} Artikel wurde erhöht
+        cartPage.mengeDropDown();
+
+        // Der Betrag im Warenkorb muss als Produktpreis*Betrag angegeben werden.
+        System.out.println("Produktstückpreis = " + cartPage.price());
+        System.out.println("Warenkorb-Gesamtpreis = " + cartPage.priceSumme());
+        Assert.assertEquals(cartPage.price(), cartPage.priceSumme());
+
+
+        // Das hinzugefügte Produkt wird aus dem Warenkorb gelöscht.
+        Driver.getDriver().navigate().refresh();
+        Thread.sleep(3000);
+        cartPage.loschen().click();
+
+        // Es wird geprüft, ob die Löschung erfolgt ist oder nicht.
+        Assert.assertTrue(cartPage.loschenVerify().contains("Dein Amazon-Einkaufswagen ist leer."));
+
+        // Melden Sie sich ab.
+        basePage.abmelden();
+        Thread.sleep(3000);
+
+        // Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
+        Assert.assertTrue(loginPage.abmeldenVerify().contains("Anmelden"));
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+
     @Test
     public void test() throws InterruptedException {
 
@@ -51,9 +160,6 @@ public class AmazonTestPage {
 
        homePage.signInClick();
 
-
-
-        /*
 //   Der Registrierungsprozess wird überprüft.
 
         Assert.assertTrue(homePage.hello.isDisplayed(), "user did not log in");
@@ -119,9 +225,10 @@ public class AmazonTestPage {
 //    Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
         Assert.assertTrue(homePage.eMailOrPhoneArea.isDisplayed(), "user did not sign out");
 
-         */
 
     }
+
+     */
 
 
 
