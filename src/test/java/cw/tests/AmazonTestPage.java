@@ -57,7 +57,7 @@ public class AmazonTestPage {
         loginPage.loginPassword();
 
         // Login-Seite wird geöffnet und überprüft
-        Assert.assertTrue(basePage.loginVerify().getText().contains("Hello"));
+        Assert.assertTrue(basePage.anMeldungVerifizieren().getText().contains("Hello"));
 
         // Kategorien-Tab "Computer" auswählen
         basePage.selectDropDown();
