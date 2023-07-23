@@ -35,7 +35,7 @@ public class AmazonCartPage extends AmazonBasePage{
         return Driver.getDriver().findElement(By.xpath("//input[@value='Delete']"));
     }
 
-    public String loschenVerify(){
+    public String loschungVerifizieren(){
         return Driver.getDriver().findElement(By.xpath("//h1[@class='a-spacing-mini a-spacing-top-base']")).getText();
     }
 
