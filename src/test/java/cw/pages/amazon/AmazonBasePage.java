@@ -37,9 +37,11 @@ public class AmazonBasePage {
 
 
     public void selectDropDown() {
-        WebElement searchDropdown = Driver.getDriver().findElement(By.id("searchDropdownBox"));
+        WebElement searchDropdown = Driver.getDriver().findElement(By.xpath("//select[@name='url']"));
         Select select = new Select(searchDropdown);
-        select.selectByVisibleText("Computer");
+        select.selectByVisibleText("Computers");
+
+
     }
 
 

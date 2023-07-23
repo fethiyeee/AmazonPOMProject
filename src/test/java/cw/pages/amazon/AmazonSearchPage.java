@@ -21,9 +21,14 @@ public class AmazonSearchPage extends AmazonBasePage {
         return searchText.getText();
     }
 
-    public void seiteZweiClick(){
-        WebElement seiteZwei = Driver.getDriver().findElement(By.xpath("//a[@aria-label='Zu Seite 2']"));
+    public void seiteZweiClick() throws InterruptedException {
+       WebElement seiteZwei = Driver.getDriver().findElement(By.xpath("//a[.='2']"));
+//        seiteZwei.click();
+
+        JavascriptExecutor jsexecutor = (JavascriptExecutor) Driver.getDriver();
+        jsexecutor.executeScript("arguments[0].scrollIntoView(true);", seiteZwei);
         seiteZwei.click();
+        Thread.sleep(1000);
     }
 
     public WebElement seiteZweiVerify(){
