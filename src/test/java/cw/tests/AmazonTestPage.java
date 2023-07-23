@@ -112,7 +112,7 @@ public class AmazonTestPage {
         Thread.sleep(3000);
 
         // Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
-        Assert.assertTrue(loginPage.abMeldenVerify().contains("Sign in")); //Beim Abmelden wird die Anmeldung erneut angezeigt
+        Assert.assertTrue(loginPage.abMeldungVerifizieren().contains("Sign in")); //Beim Abmelden wird die Anmeldung erneut angezeigt
 
 
     }
