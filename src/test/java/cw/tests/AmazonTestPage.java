@@ -39,7 +39,6 @@ public class AmazonTestPage {
         AmazonBasePage basePage = new AmazonBasePage();
         AmazonCartPage cartPage = new AmazonCartPage();
         AmazonLoginPage loginPage = new AmazonLoginPage();
-       // AmazonHomePage homePage = new AmazonHomePage();
         AmazonSearchPage searchPage = new AmazonSearchPage();
 
         // Amazon-Website öffnen https://www.amazon.com.tr/
@@ -47,9 +46,6 @@ public class AmazonTestPage {
 
         // Startseite wird geöffnet und überprüft
         Assert.assertTrue(Driver.getDriver().getTitle().contains("Amazon"));
-
-        // Cookies akzeptieren
-        // homePage.cerezAccept();
 
         // Login auf der Website
         basePage.loginClick();
