@@ -85,7 +85,7 @@ public class AmazonTestPage {
         Thread.sleep(2000);
 
         // Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
-        Assert.assertTrue(searchPage.hinzufugen().contains("hinzugefügt"));
+        Assert.assertTrue(searchPage.hinzufugen().contains("Added to Cart"));
 
         // Überprüfen Sie, ob die Warenkorbseite geöffnet ist.
         searchPage.einkaufswagwen();
@@ -95,8 +95,8 @@ public class AmazonTestPage {
 
         // Der Betrag im Warenkorb muss als Produktpreis*Betrag angegeben werden.
         System.out.println("Produktstückpreis = " + cartPage.price());
-        System.out.println("Warenkorb-Gesamtpreis = " + cartPage.priceSumme());
-        Assert.assertEquals(cartPage.price(), cartPage.priceSumme());
+        System.out.println("Warenkorb-Gesamtpreis = " + cartPage.priceSumme()*3);
+        Assert.assertEquals(cartPage.price()*3, cartPage.priceSumme()*3);
 
 
         // Das hinzugefügte Produkt wird aus dem Warenkorb gelöscht.
@@ -105,14 +105,14 @@ public class AmazonTestPage {
         cartPage.loschen().click();
 
         // Es wird geprüft, ob die Löschung erfolgt ist oder nicht.
-        Assert.assertTrue(cartPage.loschenVerify().contains("Dein Amazon-Einkaufswagen ist leer."));
+        Assert.assertTrue(cartPage.loschenVerify().contains("Your Amazon Cart is empty."));
 
         // Melden Sie sich ab.
         basePage.abmelden();
         Thread.sleep(3000);
 
         // Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
-        Assert.assertTrue(loginPage.abmeldenVerify().contains("Anmelden"));
+        Assert.assertTrue(loginPage.abmeldenVerify().contains("Sign in"));
 
 
     }

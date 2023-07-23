@@ -60,7 +60,7 @@ public class AmazonBasePage {
         WebElement abmelden = Driver.getDriver().findElement(By.xpath("//a[@data-nav-role='signin']"));
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(abmelden).perform();
-        Driver.getDriver().findElement(By.xpath("//span[.='Abmelden']")).click();
+        Driver.getDriver().findElement(By.xpath("//span[.='Sign Out']")).click();
     }
 }
 

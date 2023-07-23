@@ -20,19 +20,19 @@ public class AmazonCartPage extends AmazonBasePage{
     }
 
     public double price(){
-        WebElement productPrice = Driver.getDriver().findElement(By.xpath("//div[@class='sc-badge-price-to-pay']"));
+        WebElement productPrice = Driver.getDriver().findElement(By.xpath("//p[@class='a-spacing-mini']"));
         String pp = productPrice.getText().replace("$", "").replace(" ", "").replace(",", ".");
         return Double.parseDouble(pp);
     }
 
     public double priceSumme(){
-        WebElement productPriceSumme = Driver.getDriver().findElement(By.xpath("//*[@id='sc-subtotal-amount-activecart']/span"));
+        WebElement productPriceSumme = Driver.getDriver().findElement(By.id("sc-subtotal-amount-activecart"));
         String ppS = productPriceSumme.getText().replace("$", "").replace(" ", "").replace(",", ".");
         return Double.parseDouble(ppS);
     }
 
     public WebElement loschen(){
-        return Driver.getDriver().findElement(By.xpath("//input[@value='Löschen']"));
+        return Driver.getDriver().findElement(By.xpath("//input[@value='Delete']"));
     }
 
     public String loschenVerify(){
