@@ -49,7 +49,7 @@ public class AmazonSearchPage extends AmazonBasePage {
         return  Driver.getDriver().findElement(By.xpath("//*[@id=\"NATC_SMART_WAGON_CONF_MSG_SUCCESS\"]/span")).getText();
     }
 
-    public void einkaufswagwen(){
+    public void einKaufsWagwen(){
         Driver.getDriver().findElement(By.xpath("//*[@id='sw-gtc']/span/a")).click();
     }
 
