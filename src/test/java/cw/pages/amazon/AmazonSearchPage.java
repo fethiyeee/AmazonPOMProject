@@ -32,7 +32,7 @@ public class AmazonSearchPage extends AmazonBasePage {
     }
 
     public WebElement seiteZweiVerify(){
-        WebElement seiteZweiVerify = Driver.getDriver().findElement(By.xpath("//span[@aria-label='Aktuelle Seite, Seite 2']"));
+        WebElement seiteZweiVerify = Driver.getDriver().findElement(By.xpath("//span[.='2']"));
         return seiteZweiVerify;
     }
 
