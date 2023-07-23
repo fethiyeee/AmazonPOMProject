@@ -16,7 +16,7 @@ public class AmazonLoginPage extends AmazonBasePage{
         Driver.getDriver().findElement(By.id("signInSubmit")).click();
     }
 
-    public String abMeldenVerify(){
+    public String abMeldenVerifizieren(){
         return Driver.getDriver().findElement(By.xpath("//h1[@class='a-spacing-small']")).getText();
     }
 }
