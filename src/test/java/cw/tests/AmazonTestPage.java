@@ -108,11 +108,11 @@ public class AmazonTestPage {
         Assert.assertTrue(cartPage.loschenVerify().contains("Your Amazon Cart is empty."));
 
         // Melden Sie sich ab.
-        basePage.abmelden();
+        basePage.abMelden();
         Thread.sleep(3000);
 
         // Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
-        Assert.assertTrue(loginPage.abmeldenVerify().contains("Sign in")); //Beim Abmelden wird die Anmeldung erneut angezeigt
+        Assert.assertTrue(loginPage.abMeldenVerify().contains("Sign in")); //Beim Abmelden wird die Anmeldung erneut angezeigt
 
 
     }
