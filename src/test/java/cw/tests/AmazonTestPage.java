@@ -94,8 +94,8 @@ public class AmazonTestPage {
         cartPage.mengeDropDown();
 
         // Der Betrag im Warenkorb muss als Produktpreis*Betrag angegeben werden.
-        System.out.println("Produktstückpreis = " + cartPage.price());
-        System.out.println("Warenkorb-Gesamtpreis = " + cartPage.priceSumme()*3);
+        System.out.println("ProduktStückPreis = " + cartPage.price());
+        System.out.println("Warenkorb-GesamtPreis = " + cartPage.priceSumme()*3);
         Assert.assertEquals(cartPage.price()*3, cartPage.priceSumme()*3);
 
 
