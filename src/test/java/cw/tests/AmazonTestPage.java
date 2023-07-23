@@ -63,7 +63,7 @@ public class AmazonTestPage {
         basePage.selectDropDown();
 
         // Computer-Kategorie ausgewählt und überprüft
-        Assert.assertTrue(basePage.selectedCategoryVerify().contains("Computer"));
+        Assert.assertTrue(basePage.ausgewählteKategorieVerifizieren().contains("Computer"));
 
         // In die Suchleiste "msi" eingeben und Suche ausführen
         basePage.searchArea("msi");
