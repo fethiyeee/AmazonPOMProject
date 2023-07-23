@@ -40,7 +40,7 @@ public class AmazonBasePage {
     }
 
 
-    public WebElement loginVerify() {
+    public WebElement anMeldungVerifizieren() {
         WebElement loginVerify = Driver.getDriver().findElement(By.id("nav-link-accountList-nav-line-1"));
         return loginVerify;
     }
