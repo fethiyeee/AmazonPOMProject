@@ -1,0 +1,7 @@
+cw\pages\amazon\AmazonCartPage.class
+cw\utilities\ConfigurationReader.class
+cw\tests\AmazonTestPage.class
+cw\pages\amazon\AmazonBasePage.class
+cw\utilities\Driver.class
+cw\pages\amazon\AmazonSearchPage.class
+cw\pages\amazon\AmazonLoginPage.class
