@@ -45,7 +45,7 @@ public class AmazonBasePage {
         return loginVerify;
     }
 
-    public String selectedCategoryVerify() {
+    public String ausgewählteKategorieVerifizieren() {
         WebElement searchDropdown = Driver.getDriver().findElement(By.id("searchDropdownBox"));
         return searchDropdown.getText();
     }
