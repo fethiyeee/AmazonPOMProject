@@ -105,7 +105,7 @@ public class AmazonTestPage {
         cartPage.loschen().click();
 
         // Es wird geprüft, ob die Löschung erfolgt ist oder nicht.
-        Assert.assertTrue(cartPage.loschenVerify().contains("Your Amazon Cart is empty."));
+        Assert.assertTrue(cartPage.loschungVerifizieren().contains("Your Amazon Cart is empty."));
 
         // Melden Sie sich ab.
         basePage.abMelden();
