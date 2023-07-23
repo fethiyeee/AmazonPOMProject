@@ -88,7 +88,7 @@ public class AmazonTestPage {
         Assert.assertTrue(searchPage.hinzufugen().contains("Added to Cart"));
 
         // Überprüfen Sie, ob die Warenkorbseite geöffnet ist.
-        searchPage.einkaufswagwen();
+        searchPage.einKaufsWagwen();
 
         // Die Anzahl der im Warenkorb gekauften {amount} Artikel wurde erhöht
         cartPage.mengeDropDown();
