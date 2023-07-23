@@ -39,7 +39,7 @@ public class AmazonTestPage {
         AmazonBasePage basePage = new AmazonBasePage();
         AmazonCartPage cartPage = new AmazonCartPage();
         AmazonLoginPage loginPage = new AmazonLoginPage();
-        AmazonHomePage homePage = new AmazonHomePage();
+       // AmazonHomePage homePage = new AmazonHomePage();
         AmazonSearchPage searchPage = new AmazonSearchPage();
 
         // Amazon-Website öffnen https://www.amazon.com.tr/
@@ -97,7 +97,6 @@ public class AmazonTestPage {
         System.out.println("ProduktStückPreis = " + cartPage.price());
         System.out.println("Warenkorb-GesamtPreis = " + cartPage.priceSumme()*3);
         Assert.assertEquals(cartPage.price()*3, cartPage.priceSumme()*3);
-
 
         // Das hinzugefügte Produkt wird aus dem Warenkorb gelöscht.
         Driver.getDriver().navigate().refresh();
