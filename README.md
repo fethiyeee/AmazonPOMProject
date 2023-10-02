@@ -54,6 +54,6 @@ Der HTML Report wird automatisch generiert und befindet sich im Verzeichnis "tar
 
 ## Kontakt
 
-Für Fragen, Probleme oder Feedback kontaktieren Sie uns bitte unter [fethiye0623@gmail.com].
+Für Fragen, Probleme oder Feedback kontaktieren Sie mich bitte unter [fethiye0623@gmail.com].
 
 **Hinweis:** Dies ist eine Beispiel-README-Datei für ein automatisiertes Testprojekt für Amazon, das Java 11 und Maven verwendet und sowohl Allure Report als auch HTML Report für die Testergebnisse nutzt. Passen Sie den Inhalt entsprechend den spezifischen Anforderungen und Test-Szenarien Ihres Projekts an.
