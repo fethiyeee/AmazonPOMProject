@@ -1,30 +1,59 @@
-﻿# AmazonPOMProject
+# Automatisiertes Testprojekt für Amazon
 
-Hallo, ich habe diesen Testfall komplett selbst getestet. 😎
-Hier ist der Inhalt des Testfalls, falls Sie einen Blick darauf werfen möchten.. 😊
+Dieses Projekt wurde entwickelt, um Test-Szenarien zur Überprüfung der Funktionalität  der Amazon-Website zu automatisieren. Es werden Selenium und Java 11 verwendet und das Page Object Model (POM) folgt für eine effiziente Organisation der Testskripte. Die Testergebnisse werden sorgfältig mit sowohl Allure Reports als auch HTML Reports dokumentiert.
 
- 
-    1. Die Seite https://www.amazon.com.tr/ wird geöffnet.
-    2. Überprüfen Sie, ob die Startseite geöffnet ist.
-    3. In den Cookie-Einstellungen ist „Cookies akzeptieren“ ausgewählt.
-    4. Melden Sie sich auf der Website an.
-    5. Der Registrierungsprozess wird überprüft.
-    6. Computer ist auf der Registerkarte „Kategorien“ neben der Suchschaltfläche ausgewählt.
-    7. Stellen Sie sicher, dass die Kategorie „Computer“ ausgewählt ist.
-    8. Geben Sie msi in das Suchfeld ein und suchen Sie.
-    9. Überprüfen Sie, ob der Suche getätigt wurde.
-    10. Die zweite Seite wird von der Suchergebnisseite aus geöffnet.
-    11.  Überprüfen Sie, ob die Seite geöffnet ist.
-    12. Das dritte Produkt auf der Seite wird dem Warenkorb hinzugefügt.
-    13. Überprüfen Sie, ob das Produkt zum Warenkorb hinzugefügt wurde.
-    14. Überprüfen Sie, ob die Warenkorbseite geöffnet ist.
-    15. Die Anzahl der im Warenkorb gekauften {amount} Artikel wurde erhöht
-    16. Der Betrag im Warenkorb muss als Produktpreis*Betrag angegeben werden.
-    17. Das hinzugefügte Produkt wird aus dem Warenkorb gelöscht.
-    18. Es wird geprüft, ob die Löschung erfolgt ist oder nicht.
-    19. Der Austrittsprozess für Mitglieder ist abgeschlossen.
-    20. Überprüfen Sie, ob der Abmeldevorgang abgeschlossen ist.
-    
- 
+## Voraussetzungen
 
- 
+Stellen Sie sicher, dass Java 11 JDK auf Ihrem System installiert ist.
+
+Abhängigkeiten:
+
+- Selenium WebDriver.
+- WebDriverManager
+- TestNG
+- Allure TestNG
+
+## Installation
+
+1. Überprüfen Sie die Installation von Java 11 JDK auf Ihrem System.
+2. Verwenden Sie die Datei "pom.xml" im Hauptverzeichnis, um automatisch die erforderlichen Abhängigkeiten herunterzuladen.
+
+## Testausführung
+
+Führen Sie die Tests mit folgendem Befehl aus:
+
+```bash
+mvn test
+```
+
+Dieser Befehl führt automatisch die Test-Szenarien aus und zeigt die Ergebnisse auf dem Bildschirm an.
+
+## Testberichte
+
+Dieses Projekt verwendet sowohl Allure Report als auch HTML Report zur Dokumentation der Testergebnisse.
+
+### Allure Report
+
+Der Allure Report bietet eine detaillierte Darstellung der Testergebnisse, einschließlich Teststatus, Fehlermeldungen, Screenshots und einer Zeitleiste. Öffnen Sie den Allure Report mit folgenden Befehlen:
+
+```bash
+mvn clean test
+allure serve allure-results
+```
+
+Nach Ausführung öffnet sich der Allure Report in Ihrem Standardwebbrowser.
+
+### HTML Report
+
+Der HTML Report wird automatisch generiert und befindet sich im Verzeichnis "target\surefire-reports". Öffnen Sie die HTML-Berichte, indem Sie die entsprechenden Dateien in einem Webbrowser öffnen.
+
+## Hinweise
+
+- Stellen Sie sicher, dass Ihre Internetverbindung und der Chrome-Browser aktuell sind, um die Tests erfolgreich auszuführen.
+- Testergebnisse können in der Konsole und/oder in den generierten Testberichten angezeigt werden, abhängig von der Konfiguration im Test.
+
+## Kontakt
+
+Für Fragen, Probleme oder Feedback kontaktieren Sie uns bitte unter [fethiye0623@gmail.com].
+
+**Hinweis:** Dies ist eine Beispiel-README-Datei für ein automatisiertes Testprojekt für Amazon, das Java 11 und Maven verwendet und sowohl Allure Report als auch HTML Report für die Testergebnisse nutzt. Passen Sie den Inhalt entsprechend den spezifischen Anforderungen und Test-Szenarien Ihres Projekts an.
