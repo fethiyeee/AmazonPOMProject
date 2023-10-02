@@ -1,6 +1,6 @@
 # Automatisiertes Testprojekt für Amazon
 
-Dieses Projekt wurde entwickelt, um Test-Szenarien zur Überprüfung der Funktionalität  der Amazon-Website zu automatisieren. Es werden Selenium und Java 11 verwendet und das Page Object Model (POM) folgt für eine effiziente Organisation der Testskripte. Die Testergebnisse werden sorgfältig mit sowohl Allure Reports als auch HTML Reports dokumentiert.
+Dieses Projekt wurde entwickelt, um Test-Szenarien zur Überprüfung der Funktionalität  der Amazon Website zu automatisieren. Es werden Selenium und Java 11 verwendet und das Page Object Model (POM) folgt für eine effiziente Organisation der Testskripte. Die Testergebnisse werden sorgfältig mit sowohl Allure Reports als auch HTML Reports dokumentiert.
 
 ## Voraussetzungen
 
